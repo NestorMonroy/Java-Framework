@@ -33,9 +33,28 @@ public class Servlet extends HttpServlet {
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
 
-		out.println("<html>");
-		out.println("<h1>Mensaje desde mi primer Servlet</h1>");
-		out.println("</html>");
+		/*
+		 * out.println("<html>");
+		 * out.println("<h1>Mensaje desde mi primer Servlet</h1>");
+		 * out.println("</html>");
+		 */
+
+		String accion = request.getParameter("accion");
+
+		if (accion != null) {
+			if (accion.equals("login")) {
+				getServletContext().getRequestDispatcher("/jsp/login.jsp").forward(request, response);
+
+			} else if (accion.equals("inicio")) {
+				{
+					getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+				}
+			}
+
+		} else {
+			// getRequestDispatcher la vista que se requiere
+			getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+		}
 
 	}
 

@@ -8,16 +8,15 @@
 </head>
 <body>
 	<h1>index.jsp</h1>
-	<%
-	String s = "Este mensaje no es muy dinámico";
-	out.println(s);
-	%>
 
-	<p>Este mensaje no es muy dinámico</p>
-
-	<%
+<%-- 	<%
 	out.println("Este mensaje es dinámico: " + request.getHeader("USER-AGENT"));
 	%>
-
+ --%>
+ 
+ 	<p>
+		<a href="?accion=login">Iniciar Sesión</a>
+		
+	</p>
 </body>
 </html>
