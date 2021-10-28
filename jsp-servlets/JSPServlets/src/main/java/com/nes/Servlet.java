@@ -66,8 +66,20 @@ public class Servlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
+		String accion = request.getParameter("accion");
+
+		if (accion != null) {
+			if (accion.equals("iniciarSesion")) {
+				System.out.println("Usuario: " + request.getParameter("usuario") + ", Contraseña: "
+						+ request.getParameter("contrasena"));
+			}
+
+		} else {
+			// getRequestDispatcher la vista que se requiere
+			getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+		}
+
 	}
 
 }
