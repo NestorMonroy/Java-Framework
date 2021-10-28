@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1>index.jsp</h1>
 	<%
 	String s = "Este mensaje no es muy dinámico";
 	out.println(s);
