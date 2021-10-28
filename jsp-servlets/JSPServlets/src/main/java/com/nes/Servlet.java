@@ -49,6 +49,8 @@ public class Servlet extends HttpServlet {
 				{
 					getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
 				}
+			} else if (accion.equals("iniciarSesion")) {
+				getServletContext().getRequestDispatcher("/jsp/postLogin.jsp").forward(request, response);
 			}
 
 		} else {

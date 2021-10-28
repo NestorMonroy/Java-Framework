@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +9,27 @@
 <body>
 
 	<h1>Login.jsp</h1>
-	<a href="?accion=inicio">inicio</a>
+
+	<form method="get">
+		<table>
+			<tr>
+				<td>Nombre de usuario:</td>
+				<td><input type="text" name="usuario" /></td>
+			</tr>
+			<tr>
+				<td>Contraseña:</td>
+				<td><input type="password" name="contrasena" /></td>
+			</tr>
+			<tr>
+				<td><input type="hidden" name="accion" value="iniciarSesion" />
+				</td>
+				<td><input type="submit" value="Iniciar Sesión" /></td>
+			</tr>
+		</table>
+	</form>
+	<a href="?accion=inicio">Regresar</a>
+
+
+
 </body>
 </html>
