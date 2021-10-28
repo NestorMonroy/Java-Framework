@@ -3,6 +3,7 @@ package com.nes;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -59,21 +60,34 @@ public class Servlet extends HttpServlet {
 
 		if (accion != null) {
 			if (accion.equals("login")) {
-				getServletContext().getRequestDispatcher(rutaJsp + "login.jsp").forward(request, response);
+				// getServletContext().getRequestDispatcher(rutaJsp +
+				// "login.jsp").forward(request, response);
+				setRespuestaControlador(accion).forward(request, response);
+				;
 
 			} else if (accion.equals("inicio")) {
-				{
-					getServletContext().getRequestDispatcher(rutaJsp + "index.jsp").forward(request, response);
-				}
+				// getServletContext().getRequestDispatcher(rutaJsp +
+				// "index.jsp").forward(request, response);
+				setRespuestaControlador("index").forward(request, response);
+
 			} else if (accion.equals("iniciarSesion")) {
-				getServletContext().getRequestDispatcher(rutaJsp + "postLogin.jsp").forward(request, response);
+				// getServletContext().getRequestDispatcher(rutaJsp +
+				// "postLogin.jsp").forward(request, response);
+				setRespuestaControlador("postLogin").forward(request, response);
 			}
 
 		} else {
 			// getRequestDispatcher la vista que se requiere
-			getServletContext().getRequestDispatcher(rutaJsp + "index.jsp").forward(request, response);
+			setRespuestaControlador("index").forward(request, response);
+			// getServletContext().getRequestDispatcher(rutaJsp +
+			// "index.jsp").forward(request, response);
 		}
 
+	}
+
+	public RequestDispatcher setRespuestaControlador(String vista) {
+		String url = rutaJsp + vista + ".jsp";
+		return getServletContext().getRequestDispatcher(url);
 	}
 
 	/**
@@ -112,13 +126,17 @@ public class Servlet extends HttpServlet {
 				contexto.setAttribute("usuario", usuario);
 				contexto.setAttribute("contrasena", contrasena);
 
-				getServletContext().getRequestDispatcher("/jsp/postLogin.jsp").forward(request, response);
+				// getServletContext().getRequestDispatcher("/jsp/postLogin.jsp").forward(request,
+				// response);
+				setRespuestaControlador("postLogin").forward(request, response);
 
 			}
 
 		} else {
 			// getRequestDispatcher la vista que se requiere
-			getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+			setRespuestaControlador("index").forward(request, response);
+			// getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request,
+			// response);
 		}
 
 	}
