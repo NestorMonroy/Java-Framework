@@ -3,6 +3,7 @@ package com.nes;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,12 +18,25 @@ public class Servlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
+	private String rutaJsp;
+
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
 	public Servlet() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);
+		rutaJsp = config.getInitParameter("rutaJsp");
+		System.out.println(rutaJsp);
+		/*
+		 * super.init(config); System.out.println("rutaJsp");
+		 */
 	}
 
 	/**
@@ -45,19 +59,19 @@ public class Servlet extends HttpServlet {
 
 		if (accion != null) {
 			if (accion.equals("login")) {
-				getServletContext().getRequestDispatcher("/jsp/login.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher(rutaJsp + "login.jsp").forward(request, response);
 
 			} else if (accion.equals("inicio")) {
 				{
-					getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+					getServletContext().getRequestDispatcher(rutaJsp + "index.jsp").forward(request, response);
 				}
 			} else if (accion.equals("iniciarSesion")) {
-				getServletContext().getRequestDispatcher("/jsp/postLogin.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher(rutaJsp + "postLogin.jsp").forward(request, response);
 			}
 
 		} else {
 			// getRequestDispatcher la vista que se requiere
-			getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher(rutaJsp + "index.jsp").forward(request, response);
 		}
 
 	}
