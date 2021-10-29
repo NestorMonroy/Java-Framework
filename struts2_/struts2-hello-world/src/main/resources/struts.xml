@@ -7,10 +7,20 @@
 
 	<constant name="struts.devMode" value="true" />
 
-	<package name="struts2-hello-world" extends="struts-default">
+	<package name="struts2-hello-world" namespace="/"
+		extends="struts-default">
+
+		<action name="Menu">
+			<result>/menu/Menu.jsp</result>
+		</action>
+
 		<action name="index">
 			<result>/index.jsp</result>
 		</action>
+
 	</package>
+
+    
+     <include file="com/nestor/helloworld/helloWorld.xml"/>
 
 </struts>
