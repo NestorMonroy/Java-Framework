@@ -10,4 +10,4 @@
 	<h1>Welcome to Struts 2!</h1>
 </body>
 </html>
-tml>
+
