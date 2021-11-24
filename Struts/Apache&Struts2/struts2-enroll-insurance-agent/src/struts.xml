@@ -16,5 +16,7 @@
     </package>
     
      <include file="mx/nestor/helloworld/helloWorld.xml"/>
+     <include file="mx/nestor/insurance/Insurance.xml"/>
+     
 
 </struts>
