@@ -8,6 +8,9 @@
 
 <body>
 	<hr>
+
+	<!-- https://struts.apache.org/tag-developers/form-tags.html -->
+	
 	<h4>Please enter your name</h4>
 	<s:form action="HelloWorld">
 		<s:textfield name="name" label="Your name" />

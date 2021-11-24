@@ -5,7 +5,7 @@ public class MessageStore {
 	private String message;
 
 	public MessageStore() {
-		message = "Hello Struts 2 User :";
+		message = "Hello Struts 2 User:";
 	}
 
 	public String getMessage() {
