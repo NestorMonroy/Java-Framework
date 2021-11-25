@@ -8,7 +8,6 @@
 <title>Enroll a new Insurance Agent</title>
 </head>
 <s:head />
-
 <body>
 
 	<h3>Enroll a new Insurance Agent.</h3>

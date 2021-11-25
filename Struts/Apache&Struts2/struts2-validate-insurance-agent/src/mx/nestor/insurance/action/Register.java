@@ -17,14 +17,6 @@ public class Register extends ActionSupport {
 		return SUCCESS;
 	}
 
-	public Agent getAgentBean() {
-		return agentBean;
-	}
-
-	public void setAgentBean(Agent agentBean) {
-		this.agentBean = agentBean;
-	}
-
 	@Override
 	public void validate() {
 		if (agentBean.getFirstName().length() == 0) {
@@ -38,6 +30,14 @@ public class Register extends ActionSupport {
 		if (agentBean.getEmail().length() == 0) {
 			addFieldError("agentBean.email", "Email is required.");
 		}
+	}
+
+	public Agent getAgentBean() {
+		return agentBean;
+	}
+
+	public void setAgentBean(Agent agentBean) {
+		this.agentBean = agentBean;
 	}
 
 }
