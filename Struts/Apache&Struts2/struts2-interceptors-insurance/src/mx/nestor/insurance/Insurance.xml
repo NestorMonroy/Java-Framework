@@ -10,6 +10,7 @@
 
 		<interceptors>
 			<interceptor-stack name="appDefault">
+				<interceptor-ref name="timer" />
 				<interceptor-ref name="defaultStack">
 					<param name="exception.logEnabled">true</param>
 					<param name="exception.logLevel">ERROR</param>
@@ -17,6 +18,8 @@
 			</interceptor-stack>
 		</interceptors>
 
+		<default-interceptor-ref name="appDefault" />
+		
 		<global-results>
 			<result name="error">/error.jsp</result>
 		</global-results>
