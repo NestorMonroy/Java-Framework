@@ -9,6 +9,15 @@
 
 	<hr>
 	<ul>
+		<li><a href='<s:url action="index" namespace="config-browser" />'>Launch
+				the configuration browser</a></li>
+
+		<li><s:url action='InsuranceAgent/registerInput'
+				namespace="/InsuranceAgent" var="registerDebugLink">
+				<s:param name="debug">xml</s:param>
+				<s:param name="request_locale">en</s:param>
+			</s:url> <a href="${registerDebugLink}">Register (en) with debugging</a></li>
+
 		<li><a href="<s:url action='helloWorld/helloInput'/>"><s:text
 					name="helloworld" /></a></li>
 
