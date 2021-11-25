@@ -11,6 +11,11 @@
 	<ul>
 		<li><a href="<s:url action='helloWorld/helloInput'/>"><s:text
 					name="helloworld" /></a></li>
+
+		<li><a
+			href='<s:url action="InsuranceAgent/actionspecificexception" />'>Cause
+				ActionSpecific Security Exception</a></li>
+
 		<li><a
 			href="<s:url action='InsuranceAgent/registerInput'>
 					 <s:param name="request_locale">en</s:param>

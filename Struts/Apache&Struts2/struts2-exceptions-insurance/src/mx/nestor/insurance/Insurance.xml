@@ -8,6 +8,23 @@
 	<package name="InsuranceAgent" namespace="/InsuranceAgent"
 		extends="struts-default">
 
+		<interceptors>
+			<interceptor-stack name="appDefault">
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+					<param name="exception.logLevel">ERROR</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
 
 		<action name="enroll">
 			<result>/InsuranceAgent/register.jsp</result>
@@ -23,9 +40,17 @@
 			class="mx.nestor.insurance.action.Register" method="execute">
 			<result name="success">/InsuranceAgent/thankyou.jsp</result>
 			<result name="input">/InsuranceAgent/register.jsp</result>
-
 		</action>
 
+		<action name="actionspecificexception"
+			class="mx.nestor.insurance.action.Register"
+			method="throwSecurityException">
+			<exception-mapping
+				exception="mx.nestor.insurance.exception.SecurityBreachException"
+				result="login" />
+			<result>/InsuranceAgent/register.jsp</result>
+			<result name="login">/InsuranceAgent/login.jsp</result>
+		</action>
 	</package>
 
 </struts>
