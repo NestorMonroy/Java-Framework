@@ -11,6 +11,11 @@
 			<result>/helloWorld/NameEntry.jsp</result>
 		</action>
 
+		
+		<action name="helloInput" class="mx.nestor.helloworld.HelloWorld" method="input">
+			<result name="input">/helloWorld/NameEntry.jsp</result>
+		</action>
+		
 		<action name="HelloWorld" class="mx.nestor.helloworld.HelloWorld">
 			<result name="SUCCESS">/helloWorld/HelloWorld.jsp</result>
 		</action>

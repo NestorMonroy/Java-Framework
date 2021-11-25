@@ -13,6 +13,11 @@
 			<result>/InsuranceAgent/register.jsp</result>
 		</action>
 
+		<action name="registerInput"
+			class="mx.nestor.insurance.action.Register" method="input">
+			<result name="input">/InsuranceAgent/register.jsp</result>
+		</action>
+
 
 		<action name="register"
 			class="mx.nestor.insurance.action.Register" method="execute">
